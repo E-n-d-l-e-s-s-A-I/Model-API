@@ -6,7 +6,7 @@ annotated-types==0.7.0
 anyio==4.7.0
     # via starlette
 bitsandbytes==0.45.0
-certifi==2024.12.14
+certifi==2025.1.31
     # via requests
 charset-normalizer==3.4.1
     # via requests
@@ -14,7 +14,7 @@ click==8.1.8
     # via uvicorn
 deepdiff==8.1.1
 fastapi==0.115.6
-filelock==3.16.1
+filelock==3.17.0
     # via
     #   huggingface-hub
     #   torch
@@ -26,7 +26,7 @@ fsspec==2024.12.0
     #   torch
 h11==0.14.0
     # via uvicorn
-huggingface-hub==0.27.0
+huggingface-hub==0.28.1
     # via
     #   accelerate
     #   tokenizers
@@ -95,10 +95,15 @@ pluggy==1.5.0
 psutil==6.1.1
     # via accelerate
 pydantic==2.10.4
-    # via fastapi
+    # via
+    #   fastapi
+    #   pydantic-settings
 pydantic-core==2.27.2
     # via pydantic
+pydantic-settings==2.7.1
 pytest==8.3.4
+python-dotenv==1.0.1
+    # via pydantic-settings
 pyyaml==6.0.2
     # via
     #   accelerate
