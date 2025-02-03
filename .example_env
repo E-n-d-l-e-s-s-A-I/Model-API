@@ -1,0 +1,2 @@
+HF_TOKEN = "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"
+MODEL_ID = "unsloth/llama-3-8b-bnb-4bit"
