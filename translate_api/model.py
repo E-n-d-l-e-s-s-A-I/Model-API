@@ -2,9 +2,13 @@ import transformers
 import torch
 from huggingface_hub import login
 from settings import settings
+import os
 
-MODEL_ID = settings.model_id
-login(settings.hf_token)
+
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+MODEL_PATH = settings.MODEL_PATH
+login(settings.HF_TOKEN)
+
 
 CONVERSATION_F0R_RU_TO_ENG_TRANSLATE = [
         "system: Ты переводчик текстов с русского языка на английский.",
@@ -23,11 +27,11 @@ CONVERSATION_F0R_ENG_TO_RU_TRANSLATE = [
 
 class Model:
     tokenizer = transformers.AutoTokenizer.from_pretrained(
-        MODEL_ID, use_fast=True
+        MODEL_PATH, use_fast=True
     )
     pipeline = transformers.pipeline(
         "text-generation",
-        model=MODEL_ID,
+        model=MODEL_PATH,
         tokenizer=tokenizer,
         model_kwargs={"torch_dtype": torch.bfloat16},
     )

@@ -3,8 +3,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     """Глобальный конфиг."""
-    model_id: str
-    hf_token: str
+    MODEL_PATH: str
+    HF_TOKEN: str
 
     model_config = SettingsConfigDict(extra="ignore")
 

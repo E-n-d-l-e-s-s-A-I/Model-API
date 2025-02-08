@@ -1,2 +1,2 @@
 HF_TOKEN = "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"
-MODEL_ID = "unsloth/llama-3-8b-bnb-4bit"
+MODEL_PATH = "unsloth/llama-3-8b-bnb-4bit" # путь к модели в том числе и локальной
