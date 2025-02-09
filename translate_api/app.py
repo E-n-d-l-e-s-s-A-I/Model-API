@@ -11,7 +11,10 @@ import uvicorn
 
 app = FastAPI(
     title="Translate API",
+    description="API для перевода текста на русский и английский языки",
+    version="1.0.0",
 )
+
 
 
 @app.post("/translate_by_conversation")
@@ -38,4 +41,4 @@ async def translate_eng_to_ru(text: str) -> str:
 
 
 if __name__ == "__main__":
-    uvicorn.run(app)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

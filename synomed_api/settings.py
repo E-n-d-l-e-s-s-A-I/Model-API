@@ -2,10 +2,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    """Конфиг translate_api."""
-    MODEL_PATH: str
-    HF_TOKEN: str
-
+    """Конфиг synomed_api."""
+    UMLS_API_KEY: str
+    TRANSLATE_API_URL: str
     model_config = SettingsConfigDict(extra="ignore")
 
 
