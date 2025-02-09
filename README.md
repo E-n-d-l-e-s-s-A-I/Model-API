@@ -5,7 +5,7 @@
 - Задать перемиенные окружения HF_TOKEN, MODEL_PATH. MODEL_PATH может быть путем к локальной модели.
 - `cd translate_api`
 - `python app.py`
-- документация будет доступна - `http://localhost:8000/docs`
+- Документация будет доступна - `http://localhost:8000/docs`
 
 
 # Synomed-API
@@ -16,4 +16,4 @@
 - Задать перемиенные окружения UMLS_API_KEY, TRANSLATE_API_URL.
 - `cd synomed_api`
 - `python app.py`
-- документация будет доступна - `http://localhost:8001/docs`
+- Документация будет доступна - `http://localhost:8001/docs`
