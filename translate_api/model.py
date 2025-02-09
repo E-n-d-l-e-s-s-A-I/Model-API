@@ -11,24 +11,22 @@ login(settings.HF_TOKEN)
 
 
 CONVERSATION_F0R_RU_TO_ENG_TRANSLATE = [
-        "system: Ты переводчик текстов с русского языка на английский.",
-        "user: Переведи данные фрагменты текста с русского языка на английский.\nФрагменты:\nИскусственный интеллект — универсальный инструмент.\nЕстественный интеллект",
-        "assistant: Artificial intelligence is a universal tool.\nNatural intelligence",
-        "user: Переведи данные фрагменты текста с русского языка на английский.\nФрагменты:\n",
+    "system: Ты переводчик текстов с русского языка на английский.",
+    "user: Переведи данные фрагменты текста с русского языка на английский.\nФрагменты:\nИскусственный интеллект — универсальный инструмент.\nЕстественный интеллект",
+    "assistant: Artificial intelligence is a universal tool.\nNatural intelligence",
+    "user: Переведи данные фрагменты текста с русского языка на английский.\nФрагменты:\n",
 ]
 
 CONVERSATION_F0R_ENG_TO_RU_TRANSLATE = [
-        "system: Ты переводчик текстов с ангийского языка на русский.",
-        "user: Переведи данные фрагменты текста с английского языка на русский.\nФрагменты:\nArtificial intelligence is a universal tool.\nNatural intelligence",
-        "assistant: Искусственный интеллект — универсальный инструмент.\nЕстественный интеллект",
-        "user: Переведи данные фрагменты текста с английского языка на русский.\nФрагменты:\n",
+    "system: Ты переводчик текстов с ангийского языка на русский.",
+    "user: Переведи данные фрагменты текста с английского языка на русский.\nФрагменты:\nArtificial intelligence is a universal tool.\nNatural intelligence",
+    "assistant: Искусственный интеллект — универсальный инструмент.\nЕстественный интеллект",
+    "user: Переведи данные фрагменты текста с английского языка на русский.\nФрагменты:\n",
 ]
 
 
 class Model:
-    tokenizer = transformers.AutoTokenizer.from_pretrained(
-        MODEL_PATH, use_fast=True
-    )
+    tokenizer = transformers.AutoTokenizer.from_pretrained(MODEL_PATH, use_fast=True)
     pipeline = transformers.pipeline(
         "text-generation",
         model=MODEL_PATH,

@@ -3,6 +3,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     """Конфиг translate_api."""
+
     MODEL_PATH: str
     HF_TOKEN: str
 

@@ -16,7 +16,6 @@ app = FastAPI(
 )
 
 
-
 @app.post("/translate_by_conversation")
 async def translate_by_conversation(conversation: Conversation) -> str:
     conversation = [

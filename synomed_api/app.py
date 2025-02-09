@@ -1,4 +1,3 @@
-import copy
 from fastapi import FastAPI
 import uvicorn
 from api import API
@@ -9,6 +8,7 @@ app = FastAPI(
     title="Synomed API",
 )
 api = API(settings.UMLS_API_KEY)
+
 
 @app.post("/synonyms")
 async def synonyms(term: Term) -> list[Term]:
