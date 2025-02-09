@@ -4,10 +4,12 @@ from huggingface_hub import login
 from settings import settings
 import os
 
-
+# для ускорения работы модели
 os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 MODEL_PATH = settings.MODEL_PATH
-login(settings.HF_TOKEN)
+
+if settings.HF_TOKEN:
+    login(settings.HF_TOKEN)
 
 
 CONVERSATION_F0R_RU_TO_ENG_TRANSLATE = [
@@ -26,6 +28,8 @@ CONVERSATION_F0R_ENG_TO_RU_TRANSLATE = [
 
 
 class Model:
+    """Модель для перевода текста на русский и английский языки."""
+
     tokenizer = transformers.AutoTokenizer.from_pretrained(MODEL_PATH, use_fast=True)
     pipeline = transformers.pipeline(
         "text-generation",
@@ -36,7 +40,10 @@ class Model:
 
     @classmethod
     def generate(cls, conversation: list[str]):
+        """Генерирует ответ на основе контекста диалога."""
+
         prompt = "\n".join(conversation) + "\nassistant:"
+
         response = Model.pipeline(
             prompt,
             max_new_tokens=50,
