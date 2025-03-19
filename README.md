@@ -1,30 +1,18 @@
-# Translate-API
+# Model-API
 
 ## Запуск
-- Создать виртуальное окружение и установить зависимости(рекомендуемая версия python на которой происходила разработка 3.12)
+- Создать виртуальное окружение и установить зависимости(рекомендуемая версия python на которой происходила разработка 3.12) советую использовать пакетный менеджер uv
 - Задать перемиенные окружения HF_TOKEN, MODEL_PATH. MODEL_PATH может быть путем к локальной модели.
-- `cd translate_api`
+- `cd model_api`
 - `python app.py`
-- Документация будет доступна - `http://localhost:8000/docs`
-
-
-# Synomed-API
-
-## Запуск
-- запустить translate-api
-- Создать виртуальное окружение и установить зависимости(рекомендуемая версия python на которой происходила разработка 3.12)
-- Задать перемиенные окружения UMLS_API_KEY, TRANSLATE_API_URL.
-- `cd synomed_api`
-- `python app.py`
-- Документация будет доступна - `http://localhost:8001/docs`
-
+- api будет доступен - `http://localhost:8002`
 
 
 ## Пример запроса
 
 ```bash
 curl -X 'POST' \
-  'http://localhost:8001/synonyms' \
+  'http://localhost:8002/synonyms' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{

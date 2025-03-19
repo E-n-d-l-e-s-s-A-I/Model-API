@@ -17,7 +17,7 @@ app = FastAPI(
 
 
 @app.get("/extract")
-async def translate_by_conversation(text: str) -> list[str]:
+async def extract(text: str) -> list[str]:
     """Переводит текст на русский язык по контексту диалога."""
 
     conversation = copy.copy(CONVERSATION_F0R_EXTRACT)
