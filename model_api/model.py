@@ -26,6 +26,12 @@ CONVERSATION_F0R_ENG_TO_RU_TRANSLATE = [
     "user: Переведи данные фрагменты текста с английского языка на русский.\nФрагменты:\n",
 ]
 
+CONVERSATION_F0R_EXTRACT = [
+    "system: Ты медицинский специалист. Твоя задача находить медицинские заболевания в тексте",
+    "user: Извлеки заболевания из текста.\nТекст: Пациент обратился с жалобами на гипертермию, ломоту в суставах и головную боль.",
+    "assistant: Гипертермия\nЛомота в суставах\nГоловная боль",
+    "user: Извлеки заболевания из текста.\nТекст: ",
+]
 
 class Model:
     """Модель для перевода текста на русский и английский языки."""
@@ -39,15 +45,15 @@ class Model:
     )
 
     @classmethod
-    def generate(cls, conversation: list[str]):
+    def generate(cls, conversation: list[str], max_new_tokens: int):
         """Генерирует ответ на основе контекста диалога."""
 
         prompt = "\n".join(conversation) + "\nassistant:"
 
         response = Model.pipeline(
             prompt,
-            max_new_tokens=50,
+            max_new_tokens=max_new_tokens,
             do_sample=False,
         )
         assistant_reply: str = response[0]["generated_text"][len(prompt) :].strip()
-        return assistant_reply.split("\nuser")[0]
+        return assistant_reply.split("\nuser")[0].lower()

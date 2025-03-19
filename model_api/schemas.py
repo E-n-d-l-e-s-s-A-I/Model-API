@@ -5,6 +5,3 @@ class Message(BaseModel):
     role: str
     content: str
 
-
-class Conversation(BaseModel):
-    conversation: list[Message]

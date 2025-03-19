@@ -1,7 +1,3 @@
-# Translate API
+# Model API
 HF_TOKEN = "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"
 MODEL_PATH = "unsloth/llama-3-8b-bnb-4bit" # путь к модели в том числе и локальной
-
-# Synomed API
-UMLS_API_KEY = "4f9875a2-aea1-4984-ab8d-1c855a19976c"
-TRANSLATE_API_URL = "http://localhost:8000"
